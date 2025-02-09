@@ -1,0 +1,203 @@
+h1 a {
+    color: white; 
+    text-decoration: none; 
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 3rem;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+    position: relative;
+    overflow: hidden; /* Ensures video covers the background */
+}
+
+header {
+    text-align: center;
+    background-color: #FF6F61; 
+    padding: 20px 0;
+    color: white; 
+    width: 100%;
+    position: absolute;
+    top: 0;
+    z-index: 2;
+}
+
+h1 {
+    margin: 0;
+}
+
+p {
+    margin-top: 5px;
+}
+
+.background-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0;
+}
+
+.auth-container {
+    margin-top: 120px;
+    background-color: rgba(255, 255, 255);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+    padding: 30px;
+    border-radius: 10px;
+    width: 500px;  /* Increased width */
+    height: auto;  /* Auto height to fit content */
+    z-index: 3;
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+h2 {
+    text-align: center;
+    color: #FF6F61;
+    margin-bottom: 20px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.tab {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 20px;
+    width: 100%;
+}
+
+.tab button {
+    background-color: transparent;
+    border: none;
+    font-size: 1.2rem;
+    cursor: pointer;
+    padding: 10px;
+    transition: color 0.3s ease;
+}
+
+.tab button.active {
+    color: #FF6F61;
+    border-bottom: 2px solid #FF6F61;
+}
+
+.tab button:hover {
+    color: #FF6F61;
+}
+
+.form-group {
+    margin-bottom: 15px;
+    width: 100%;
+    position: relative;
+}
+
+label {
+    font-weight: bold;
+    margin-bottom: 5px;
+    display: block;
+}
+
+input {
+    width: 100%;
+    padding: 10px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.show-password {
+    position: absolute;
+    right: 10px;
+    top: 35px;
+    cursor: pointer;
+    background: none;
+    border: none;
+    font-size: 0.9rem;
+    color: #FF6F61;
+}
+
+.auth-button {
+    width: 100%;
+    padding: 12px;
+    background-color: #FF6F61;
+    color: #fff;
+    font-size: 1.2rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 15px;
+    transition: background-color 0.3s ease;
+}
+
+.auth-button:hover {
+    background-color: #ff4f41;
+}
+
+/* Fix for auth-options (Login/Signup text) being outside the container */
+.auth-options {
+    margin-top: 20px;
+    text-align: center;
+    width: 100%;  /* Make sure it fits inside the container */
+    padding: 10px;
+
+}
+
+.auth-options a {
+    color: #FF6F61;
+    text-decoration: none;
+}
+
+.auth-options a:hover {
+    text-decoration: underline;
+}
+
+/* Fix Google Sign-In button alignment */
+.google-signin-button {
+    background-color: #4285F4;
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    text-align: center;
+    margin-top: 20px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+    width: 100%;
+}
+
+.google-signin-button:hover {
+    background-color: #357AE8;
+}
+
+/* Ensure the form content fits properly */
+.form-content {
+    width: 100%;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.form-content.active {
+    display: flex;
+}
+
+/* Fix spacing inside the auth-container */
+.auth-container .google-signin-button,
+.auth-container .auth-options {
+    margin-top: 15px;
+}

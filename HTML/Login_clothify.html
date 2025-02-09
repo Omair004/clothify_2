@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Clothify | Login / Sign Up</title>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+
+    <!-- CSS Styles -->
+    <link rel="stylesheet" href="CSS/Login_clothify.css">
+</head>
+<body>
+    <video autoplay muted loop class="background-video">
+        <source src="Css/Images/Video2.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+    <header>
+        <h1>
+            <a href="Home_clothify.html">Clothify</a>
+        </h1>
+        <p>Your Virtual Wardrobe Planner</p>
+    </header>
+
+    <!-- AUTH CONTAINER (WRAPS EVERYTHING) -->
+    <div class="auth-container">
+        <h2>Clothify</h2>
+        <div class="tab">
+            <button id="login-tab" class="active" onclick="showLogin()">Login</button>
+            <button id="signup-tab" onclick="showSignup()">Sign Up</button>
+        </div>
+
+        <!-- LOGIN FORM -->
+        <div id="login-form" class="form-content">
+            <form action="../cgi-bin/Login_user.py" method="POST">
+                <div class="form-group">
+                    <label for="email-login">Email</label>
+                    <input type="email" id="email-login" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="password-login">Password</label>
+                    <input type="password" id="password-login" name="password" required>
+                    <button type="button" class="show-password" onclick="togglePassword('password-login', this)">Show</button>
+                </div>
+                <button type="submit" class="auth-button">Login</button>
+            </form>
+            <div class="auth-options">
+                <p>Don't have an account? <a href="#" onclick="showSignup()">Sign up here</a></p>
+            </div>
+        </div>
+
+        <!-- SIGN UP FORM (NOW INSIDE auth-container) -->
+        <div id="signup-form" class="form-content" style="display: none;">
+            <form action="../cgi-bin/register_user.py" method="POST">
+                <div class="form-group">
+                    <label for="username-signup">Username</label>
+                    <input type="text" id="username-signup" name="username" required>
+                </div>
+                <div class="form-group">
+                    <label for="email-signup">Email</label>
+                    <input type="email" id="email-signup" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="password-signup">Password</label>
+                    <input type="password" id="password-signup" name="password" required>
+                    <button type="button" class="show-password" onclick="togglePassword('password-signup', this)">Show</button>
+                </div>
+                <button type="submit" class="auth-button">Sign Up</button>
+            </form>
+            <div class="auth-options">
+                <p>Already have an account? <a href="#" onclick="showLogin()">Login here</a></p>
+            </div>
+        </div>
+
+        <!-- GOOGLE SIGN-IN BUTTON (NOW MOVED TO BOTTOM) -->
+        <div class="google-signin-button" id="google-signin" onclick="handleGoogleSignIn()">
+            Sign in with Google
+        </div>
+    </div>
+
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+    <script src="JS/Login_clothify.js"></script>
+</body>
+</html>

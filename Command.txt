@@ -1,0 +1,1 @@
+http://localhost:8000/html/home_clothify.html - server home page 
